@@ -1,6 +1,8 @@
 // @ts-check
-const { fontFamily } = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+import defaultTheme from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
 
 /** @type {import("tailwindcss/types").Config } */
 module.exports = {
@@ -22,7 +24,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        sans: ['Open Sans', ...defaultTheme.fontFamily.sans], // Added Open Sans to the font stack
       },
       colors: {
         primary: colors.pink,
@@ -44,11 +46,11 @@ module.exports = {
               code: { color: theme('colors.primary.400') },
             },
             'h1,h2': {
-              fontWeight: '700',
+              fontWeight: '500',
               letterSpacing: theme('letterSpacing.tight'),
             },
             h3: {
-              fontWeight: '600',
+              fontWeight: '500',
             },
             code: {
               color: theme('colors.indigo.500'),
@@ -73,8 +75,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
+    forms,
+    typography,
     ({ addBase, theme }) => {
       addBase({
         'a, button': {
