@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Kiran Kamalakar Portfolio',
+  title: 'Kiran Kamalakar',
   author: 'Kiran Kamalakar',
   headerTitle: 'KiranKamalakarBlog',
   description: 'A blog created with Next.js and Tailwind.css',
@@ -8,7 +8,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app', // TODO: update this
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog', // TODO: update this
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
+  siteLogo: `/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'kamalakarkiran07@gmail.com',
