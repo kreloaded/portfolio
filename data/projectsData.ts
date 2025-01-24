@@ -7,20 +7,22 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Payment Gateway Integration',
+    description: `Implemented a seamless payment gateway using Stripe for a global e-commerce platform, enabling secure and efficient transactions for thousands of users daily.`,
+    imgSrc: '/static/images/projects/stripe.svg',
+    href: 'https//maticrobots.com',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Distributed Log Aggregation',
+    description: `Designed and developed a fault-tolerant, distributed log aggregation system to improve the scalability and monitoring of real-time applications.`,
+    imgSrc: '/static/images/projects/log-aggregation.png',
+    href: 'https://github.com/kreloaded/distributed-event-logging',
+  },
+  {
+    title: 'SlackSharp',
+    description: `SlackSharp streamlines Slack communication by enabling users to craft messages in their preferred style (formal, concise, or contextual). It also includes speech-to-formatted AI text conversion, enhancing message quality and efficiency.`,
+    imgSrc: '/static/images/projects/slack.png',
+    href: 'https://github.com/kreloaded/SlackSharp',
   },
 ]
 
