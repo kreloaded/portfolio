@@ -59,8 +59,16 @@ export default function AuthorLayout({ children, content }: Props) {
             {children}
           </div>
 
-          {/* Skills Section */}
+          {/* Skills Section with Resume Button */}
           <div>
+            <a
+              href="/static/kiran_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-4 inline-block rounded-lg border border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-800"
+            >
+              Resume
+            </a>
             <h3 className="pb-2 text-xl font-bold">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {skillsArray.map((skill, index) => (
