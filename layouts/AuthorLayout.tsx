@@ -1,15 +1,28 @@
 import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
-import Image from '@/components/Image'
+import CustomImage from '@/components/Image' // Renamed to avoid conflicts with global DOM Image
 
 interface Props {
   children: ReactNode
-  content: Omit<Authors, '_id' | '_raw' | 'body'>
+  content: Omit<Authors, '_id' | '_raw' | 'body'> & { skills?: string }
 }
 
+// Define badge colors
+const badgeColors = [
+  'bg-blue-700', // Dark Blue
+  'bg-green-700', // Dark Green
+  'bg-orange-700', // Dark Orange
+  'bg-purple-700', // Dark Purple
+  'bg-pink-700', // Dark Pink
+  'bg-yellow-700', // Dark Yellow
+]
+
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, email, linkedin, github } = content
+  const { name, avatar, occupation, company, email, linkedin, github, skills } = content
+
+  // Split skills into an array
+  const skillsArray = skills ? skills.split(',').map((skill) => skill.trim()) : []
 
   return (
     <>
@@ -20,9 +33,10 @@ export default function AuthorLayout({ children, content }: Props) {
           </h1>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+          {/* Profile Section */}
           <div className="flex flex-col items-center space-x-2 pt-8">
             {avatar && (
-              <Image
+              <CustomImage
                 src={avatar}
                 alt="avatar"
                 width={192}
@@ -39,8 +53,25 @@ export default function AuthorLayout({ children, content }: Props) {
               <SocialIcon kind="linkedin" href={linkedin} />
             </div>
           </div>
+
+          {/* Content Section */}
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
             {children}
+          </div>
+
+          {/* Skills Section */}
+          <div>
+            <h3 className="pb-2 text-xl font-bold">Skills</h3>
+            <div className="flex flex-wrap gap-2">
+              {skillsArray.map((skill, index) => (
+                <span
+                  key={index}
+                  className={`inline-block rounded-full px-3 py-1 text-sm font-medium text-white ${badgeColors[index % badgeColors.length]}`}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
