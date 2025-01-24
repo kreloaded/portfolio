@@ -25,50 +25,43 @@ export default function AuthorLayout({ children, content }: Props) {
   const skillsArray = skills ? skills.split(',').map((skill) => skill.trim()) : []
 
   return (
-    <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            About
-          </h1>
+    <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      {/* Header */}
+      <div className="space-y-2 pb-8 pt-6 md:space-y-5">
+        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          About
+        </h1>
+      </div>
+
+      {/* Two-Column Layout */}
+      <div className="grid grid-cols-1 gap-8 pt-6 lg:grid-cols-3">
+        {/* Left Column */}
+        <div className="flex flex-col items-center space-y-4">
+          {avatar && (
+            <CustomImage
+              src={avatar}
+              alt="avatar"
+              width={192}
+              height={192}
+              className="h-48 w-48 rounded-full object-cover"
+            />
+          )}
+          <h3 className="text-2xl font-bold">{name}</h3>
+          <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
+          <div className="text-gray-500 dark:text-gray-400">{company}</div>
+          <div className="flex space-x-3">
+            <SocialIcon kind="mail" href={`mailto:${email}`} />
+            <SocialIcon kind="github" href={github} />
+            <SocialIcon kind="linkedin" href={linkedin} />
+          </div>
         </div>
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-          {/* Profile Section */}
-          <div className="flex flex-col items-center space-x-2 pt-8">
-            {avatar && (
-              <CustomImage
-                src={avatar}
-                alt="avatar"
-                width={192}
-                height={192}
-                className="h-48 w-48 rounded-full object-cover"
-              />
-            )}
-            <h3 className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
-            <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
-            <div className="text-gray-500 dark:text-gray-400">{company}</div>
-            <div className="flex space-x-3 pt-6">
-              <SocialIcon kind="mail" href={`mailto:${email}`} />
-              <SocialIcon kind="github" href={github} />
-              <SocialIcon kind="linkedin" href={linkedin} />
-            </div>
-          </div>
 
-          {/* Content Section */}
-          <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
-            {children}
-          </div>
+        {/* Right Column */}
+        <div className="col-span-2">
+          <div className="prose max-w-none dark:prose-invert">{children}</div>
 
-          {/* Skills Section with Resume Button */}
-          <div>
-            <a
-              href="/static/kiran_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-4 inline-block rounded-lg border border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-100 dark:text-gray-100 dark:hover:bg-gray-800"
-            >
-              Resume
-            </a>
+          {/* Skills Section */}
+          <div className="mt-8">
             <h3 className="pb-2 text-xl font-bold">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {skillsArray.map((skill, index) => (
@@ -83,6 +76,6 @@ export default function AuthorLayout({ children, content }: Props) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
