@@ -3,17 +3,17 @@ const siteMetadata = {
   title: 'Kiran Kamalakar',
   author: 'Kiran Kamalakar',
   headerTitle: 'KiranKamalakarBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'A portfolio created with Next.js and Tailwind.css',
   language: 'en-us',
-  theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app', // TODO: update this
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog', // TODO: update this
+  theme: 'light', // system, dark or light
+  siteUrl: 'https://www.kirankamalakar.com',
+  siteRepo: 'https://github.com/kreloaded/portfolio',
   siteLogo: `/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
-  mastodon: 'https://mastodon.social/@mastodonuser',
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
+  mastodon: '',
   email: 'kamalakarkiran07@gmail.com',
   github: 'https://github.com/kreloaded',
-  x: 'https://twitter.com/x',
+  x: 'https://twitter.com/',
   // twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
