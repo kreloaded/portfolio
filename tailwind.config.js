@@ -27,7 +27,7 @@ module.exports = {
         sans: ['Open Sans', ...defaultTheme.fontFamily.sans], // Added Open Sans to the font stack
       },
       colors: {
-        primary: colors.pink,
+        primary: colors.sky,
         gray: colors.gray,
       },
       zIndex: {
