@@ -10,7 +10,7 @@ const projectsData: Project[] = [
     title: 'Payment Gateway Integration',
     description: `Implemented a seamless payment gateway using Stripe for a global e-commerce platform, enabling secure and efficient transactions for thousands of users daily.`,
     imgSrc: '/static/images/projects/stripe.png',
-    href: 'https//maticrobots.com',
+    href: 'https://maticrobots.com',
   },
   {
     title: 'Distributed Log Aggregation',

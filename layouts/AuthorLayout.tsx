@@ -49,11 +49,11 @@ export default function AuthorLayout({ children, content }: Props) {
           <h3 className="text-2xl font-bold">{name}</h3>
           <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
           <div className="text-gray-500 dark:text-gray-400">{company}</div>
-          <div className="flex space-x-3">
+          {/* <div className="flex space-x-3">
             <SocialIcon kind="mail" href={`mailto:${email}`} />
             <SocialIcon kind="github" href={github} />
             <SocialIcon kind="linkedin" href={linkedin} />
-          </div>
+          </div> */}
         </div>
 
         {/* Right Column */}
